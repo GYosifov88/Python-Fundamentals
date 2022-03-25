@@ -1,0 +1,8 @@
+sequence = input()
+sorted_list = list(map(int, sequence.split()))
+minimum_number = min(sorted_list)
+maximum_number = max(sorted_list)
+sum_of_all_numbers = sum(sorted_list)
+print(f"The minimum number is {minimum_number}")
+print(f"The maximum number is {maximum_number}")
+print(f"The sum number is: {sum_of_all_numbers}")

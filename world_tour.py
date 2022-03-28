@@ -19,8 +19,8 @@ while command != 'Travel':
     elif action == 'Remove Stop':
         start_index = int(current_action[1])
         end_index = int(current_action[2])
-        if 0 <= start_index <= len(tour_stops) and 0 <= end_index <= len(tour_stops):
-            tour_stops = tour_stops[0:start_index] + tour_stops[end_index+1:]
+        if 0 <= start_index <= len(tour_stops) and 0 <= end_index < len(tour_stops):
+            tour_stops = tour_stops[:start_index] + tour_stops[end_index+1:]
             print(tour_stops)
         else:
             print(tour_stops)

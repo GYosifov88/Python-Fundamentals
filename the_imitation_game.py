@@ -1,5 +1,4 @@
 text = input()
-encrypted_message = list(text)
 
 command = input()
 
@@ -9,17 +8,19 @@ while command != 'Decode':
 
     if action == 'Move':
         num_of_letters = int(current_command[1])
-        for j in range (num_of_letters):
-            encrypted_message += [encrypted_message.pop(0)]
-    if action == 'Insert':
+        substring = text[:num_of_letters]
+        text = text[num_of_letters:] + substring
+
+    elif action == 'Insert':
         index = int(current_command[1])
         new_value = current_command[2]
-        encrypted_message.insert(index, new_value)
-    if action == 'ChangeAll':
+        text = text[:index] + new_value + text[index:]
+
+    elif action == 'ChangeAll':
         substring = current_command[1]
         replacement = current_command[2]
-        encrypted_message = [replacement if x == substring else x for x in encrypted_message]
+        text = text.replace(substring, replacement)
 
     command = input()
 
-print(f"The decrypted message is: {''.join(encrypted_message)}")
+print(f"The decrypted message is: {text}")

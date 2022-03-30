@@ -60,4 +60,3 @@ for hero in heroes_list:
     print(f"  HP: {heroes_list[hero]['HP']}")
     print(f"  MP: {heroes_list[hero]['MP']}")
 
-
